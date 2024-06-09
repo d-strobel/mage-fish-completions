@@ -1,3 +1,5 @@
+![Mage](https://img.shields.io/badge/Mage-v1.15.0-blue)
+
 # Mage fish completions
 Fish shell completions for Magefile targets, enabling easy navigation and execution of Mage tasks with tab completions.
 
@@ -8,6 +10,11 @@ Currently, it completes only the mage targets.
 This project provides completions for [Mage](https://github.com/magefile/mage), a modern replacement for Make.
 
 Mage is a tool that lets you write your build scripts in Go, making it easier to maintain and more powerful than traditional Makefiles.
+
+## Compatibility
+
+This script has been tested with Mage version [v1.15.0](https://github.com/magefile/mage/releases/tag/v1.15.0).
+Ensure you are using a compatible version for the best experience.
 
 ## Usage
 * Download the [mage.fish](mage.fish) file into the Fish completions folder (`~/.config/fish/completions`).
