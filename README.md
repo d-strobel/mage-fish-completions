@@ -3,6 +3,12 @@ Fish shell completions for Magefile targets, enabling easy navigation and execut
 
 Currently, it completes only the mage targets.
 
+## About Mage
+
+This project provides completions for [Mage](https://github.com/magefile/mage), a modern replacement for Make.
+
+Mage is a tool that lets you write your build scripts in Go, making it easier to maintain and more powerful than traditional Makefiles.
+
 ## Usage
 * Download the [mage.fish](mage.fish) file into the Fish completions folder (`~/.config/fish/completions`).
 ```bash
