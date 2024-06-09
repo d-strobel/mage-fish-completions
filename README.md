@@ -16,3 +16,7 @@ curl -o ~/.config/fish/completions/mage.fish https://raw.githubusercontent.com/d
 ```
 * After downloading the completion script, restart your terminal to activate the completions.
 * Now you can navigate into a directory containing a Magefile, type mage in the terminal, and hit Tab to see the Mage targets with their corresponding descriptions.
+
+## License
+
+This project is licensed under the Apache 2.0 License. See the [LICENSE](LICENSE) file for more details.
