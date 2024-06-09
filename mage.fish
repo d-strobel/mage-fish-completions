@@ -3,7 +3,12 @@
 # this function handles the mage targets and descriptions
 function __fish_mage_targets
   # get targets from mage
-  set -l targets (mage -l)
+  # suppress stderr output
+  set -l targets (mage -l 2>/dev/null)
+
+  if test "$targets[1]" = ''
+    return
+  end
 
   # loop over targets and skip the first line
   for target in $targets[2..]
