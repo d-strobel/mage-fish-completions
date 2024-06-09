@@ -14,6 +14,7 @@ Mage is a tool that lets you write your build scripts in Go, making it easier to
 ## Compatibility
 
 This script has been tested with Mage version [v1.15.0](https://github.com/magefile/mage/releases/tag/v1.15.0).
+
 Ensure you are using a compatible version for the best experience.
 
 ## Usage
@@ -22,7 +23,7 @@ Ensure you are using a compatible version for the best experience.
 curl -o ~/.config/fish/completions/mage.fish https://raw.githubusercontent.com/d-strobel/mage-fish-completions/main/mage.fish
 ```
 * After downloading the completion script, restart your terminal to activate the completions.
-* Now you can navigate into a directory containing a Magefile, type mage in the terminal, and hit Tab to see the Mage targets with their corresponding descriptions.
+* Now you can navigate into a directory containing a Magefile, type `mage` in the terminal, and hit `Tab` to see the Mage targets with their corresponding descriptions.
 
 ## License
 
