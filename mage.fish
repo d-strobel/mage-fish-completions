@@ -57,4 +57,5 @@ function __fish_mage_completions
   __fish_mage_targets
 end
 
-complete -c mage -f -a "(__fish_mage_completions)"
+# complete mage command
+complete -c mage -f -k -a "(__fish_mage_completions)"
