@@ -1,6 +1,6 @@
 # fish completion for mage                               -*- shell-script -*-
 
-# this function handles the mage targets and descriptions
+# function that handles the mage targets and descriptions
 function __fish_mage_targets
   # get targets from mage
   # suppress stderr output
