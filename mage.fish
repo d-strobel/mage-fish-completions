@@ -5,20 +5,24 @@ function __fish_mage_targets
   # get targets from mage
   # suppress stderr output
   set -l targets (mage -l 2>/dev/null)
-
   if test "$targets[1]" = ''
     return
   end
 
-  # loop over targets and skip the first line
-  for target in $targets[2..]
-    # first trim leading and trailing whitespaces
-    # then split the target into two parts on the first space
-    set -l split (string split -m 1 ' ' (string trim $target))
+  # extract parameters from mage target list
+  set -l in_targets 0
+  for target in $targets
+    if test $in_targets -eq 1
+      # first trim leading and trailing whitespaces
+      # then split the target into two parts on the first space
+      set -l split (string split -m 1 ' ' (string trim $target))
 
-    # format the output as a fish completion
-    # first string is the command, second is the description
-    printf %s\t%s\n $split[1] $split[2]
+      # format the output as a fish completion
+      # first string is the command, second is the description
+      printf %s\t%s\n $split[1] $split[2]
+    else if string match -q -r '^Targets:' $target
+      set in_targets 1
+    end
   end
 end
 
