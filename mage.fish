@@ -40,9 +40,7 @@ set -l target $argv[1]
         # print parameters for autocompletion
         for param in $params
           # only match mage target parameter
-          if string match -q -r '<.+>' $param
-            printf %s\n $param
-          end
+          string match -r '<.+>' $param
         end
         return
       end
