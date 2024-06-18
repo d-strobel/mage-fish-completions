@@ -54,7 +54,24 @@ end
 
 # function to get completions for mage
 function __fish_mage_completions
-  __fish_mage_targets
+  # get current commandline args
+  set -l args (commandline -opc)
+
+  # check if args are provided
+  if test (count $args) -eq 1
+    __fish_mage_targets
+  else
+    # get available parameters for target
+    set -l params (__fish_mage_target_params $args[2])
+    set -l arg_count (math (count $args) - 2)
+
+    # check if all available parameters are set
+    if test $arg_count -lt (count $params)
+      # complete with next available parameter
+      set -l next $params[(math $arg_count + 1)]
+      string trim --chars='<>' $next
+    end
+  end
 end
 
 # complete mage command
