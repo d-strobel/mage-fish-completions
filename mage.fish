@@ -22,6 +22,36 @@ function __fish_mage_targets
   end
 end
 
+# function to get parameters for a specific target
+function __fish_mage_target_params
+set -l target $argv[1]
+  set -l params (mage -h $target 2>/dev/null)
+
+  # extract parameters from the help output
+  set -l in_usage 0
+  for line in $params
+    if test $in_usage -eq 1
+      # we are in the "Usage" section, so extract parameters
+      if string match -q -r '^\s*mage\s+' $line
+        # trim whitespace and split the helper string
+        set -l param_line (string trim $line)
+        set -l params (string split ' ' $param_line)
+
+        # print parameters for autocompletion
+        for param in $params
+          # only match mage target parameter
+          if string match -q -r '<.+>' $param
+            printf %s\n $param
+          end
+        end
+        return
+      end
+    else if string match -q -r '^Usage:' $line
+      set in_usage 1
+    end
+  end
+end
+
 # function to get completions for mage
 function __fish_mage_completions
   __fish_mage_targets
