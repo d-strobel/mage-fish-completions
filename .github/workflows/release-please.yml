@@ -1,0 +1,23 @@
+---
+name: release-please
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  CARGO_TERM_COLOR: always
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create / Update Release
+        uses: googleapis/release-please-action@v4
+        with:
+          token: "${{ secrets.TOKEN }}"

@@ -18,12 +18,21 @@ This script has been tested with Mage version [v1.15.0](https://github.com/magef
 Ensure you are using a compatible version for the best experience.
 
 ## Usage
+
+### General
+
 * Download the [mage.fish](mage.fish) file into the Fish completions folder (`~/.config/fish/completions`).
+
 ```bash
 curl -o ~/.config/fish/completions/mage.fish https://raw.githubusercontent.com/d-strobel/mage-fish-completions/main/mage.fish
 ```
+
 * After downloading the completion script, restart your terminal to activate the completions.
 * Now you can navigate into a directory containing a Magefile, type `mage` in the terminal, and hit `Tab` to see the Mage targets with their corresponding descriptions.
+
+### Nix
+
+For nix systems we provide a flake.nix that generates a derivation that can later be used with the nix home-manager.
 
 ## License
 
