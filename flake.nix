@@ -15,6 +15,8 @@
         pkgs = import nixpkgs {
           inherit system;
         };
+
+        versionJson = builtins.fromJSON (builtins.readFile ./.release-please-manifest.json);
       in {
         devShells.default = with pkgs;
           mkShell {
@@ -34,6 +36,17 @@
               fi
             '';
           };
+
+        packages.default = pkgs.stdenv.mkDerivation {
+          pname = "mage-fish-completion";
+          version = versionJson.".";
+          src = ./.;
+
+          installPhase = ''
+            mkdir -p $out
+            cp mage.fish $out/mage.fish
+          '';
+        };
       }
     );
 }
