@@ -16,6 +16,8 @@ func Test() error {
 	return nil
 }
 
+var Default = Test
+
 // With Namespaces
 
 type Ns mg.Namespace
