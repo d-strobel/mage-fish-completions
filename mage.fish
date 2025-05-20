@@ -9,6 +9,11 @@ function __fish_mage_targets
         return
     end
 
+    # check for the default target string
+    if test "$targets[-1]" = '* default target'
+        set targets (string replace '*' '' $targets[1..-2])
+    end
+
     # extract parameters from mage target list
     set -l in_targets 0
     for target in $targets
