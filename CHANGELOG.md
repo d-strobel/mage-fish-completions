@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.1](https://github.com/d-strobel/mage-fish-completions/compare/v0.1.0...v0.1.1) (2025-05-20)
+
+
+### Bug Fixes
+
+* default target ([e3a58eb](https://github.com/d-strobel/mage-fish-completions/commit/e3a58eb55a803347788e14d36d991ff504403bf5))
+* default target breaks completion ([1ab3511](https://github.com/d-strobel/mage-fish-completions/commit/1ab3511fcfc259a5090902033aeaf186b2fa647d))
+
 ## 0.1.0 (2025-04-18)
 
 
